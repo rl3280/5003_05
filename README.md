@@ -1,5 +1,4 @@
-# 5003_05
-Feeling Through Function – Designing Expressive Reactions
+# Feeling Through Function – Designing Expressive Reactions
 
 
 Over the summer, I bought a Levono Thinkpad ... (Snapdragon CPU, GPU, NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's how I've done it, so far:
@@ -23,11 +22,12 @@ I again pushed Qwen, this time to create an Activity Map of the act of hammering
 
 3. This was the only activity I didn't do alone.  I was paired up with another student who last year taught over 40 kindergarden students as a first year teacher.  I will take her stories to my grave.  So, just like I was wondering in my first assignment, what could I do to offer teachers like her/me something we could have used last year?
    The question took me back to my first year teaching.  I didn't have time to do much of anything, including breathing, besides trying to negotiating with my 5 cohorts each day away from rioting.  All first year teachers can give to anything outside their 5 cohorts is just a few minutes. So that is where our design began.
+   
    So no Qwen et. al., instead I hit CLIO and researched best practices for inexperienced teachers to, as the research converged, doing the 3Rs: Reflect-Release-Recharge.  I used Notebook to collect the research articles, and then Gemini to align the research to CSS coding.  /chat documents the dialogic.
 
-4. Alone again in the moonless deep seas, I untethered from port again in search of .json I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkering, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't understand.
+5. Alone again in the moonless deep seas, I untethered from port again in search of .json I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkering, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment: a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't understand.
 
-5. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed so far.  So here's my game plan:
+6. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed so far.  So here's my game plan:
 
    My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this time, like last time, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
    I took a Circuit Express, and alligator-clipped strings of LEDs, each string a different color, to it.
