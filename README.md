@@ -17,7 +17,7 @@ I'd like to think I did a through job documenting what the AI coded, and the act
 
 2. In my Spring 2026, and Fall 2025 classes, the long suit of my studies was "constructionism."  In my foundation classes (4020, 4028, 5133) I "drilled down" on embodied cognition, apprenticeship, and my "stance" in all of this.  So the phenomenon I wanted to digitize for my assignment wasn't just a state machine, it was much closer to what/where I believe learning lives.  So I did a lot of coding, not of HTML, but like in 4020.
 
-I videoed a journeyman walking around workbenches in the carpentry workshop, creating ZoPDs along the way.  I created another .csv, this time a annotation of various slices of the video.
+I videoed a journeyman walking around workbenches in the carpentry workshop, creating ZoPDs along the way.  I created another .csv, this time annotations of various slices of the video.
 
 I again pushed Qwen, this time to create an Activity Map of the act of hammering (which is branched, one hand holding the nail, the other the hammer), which it did very well from the video slices.  But I also wanted to decompose the ZoPD.  I foolishly tried to do this in .json.  At some point I stopped and said, look let's just take what we have, and forget about the .json.  The web app was helpful, but as apprentices are in the video, I can't say much more.
 
