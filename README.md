@@ -1,7 +1,7 @@
 # Feeling Through Function – Designing Expressive Reactions
 
 
-Over the summer, I bought a Levono Thinkpad ... (Snapdragon CPU, GPU, NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's how I've done it, so far:
+Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-100 (Adreno X1-85 GPU, and Hexagon NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's how I've done it, so far:
 
 1.  I filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
 - Pair & Share
