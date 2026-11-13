@@ -1,5 +1,28 @@
 # 5003_05
 Feeling Through Function – Designing Expressive Reactions
+
+
+Over the summer, I bought a Levono Thinkpad ... (Snapdragon CPU, GPU, NPU), specifically for this class.  I wanted to "overclock" my activities.  Here's how I do so, so far:
+
+1.  I filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
+- Pair & Share
+- Tutor
+- Reteach
+
+I used Illustrator to wireframe the UI/UX, exported .pngs, and passed it on to VSCODE/Continue/GenieX/Qwen3-VL-4B-Instruct.
+
+I also had an AGENTS.md.
+
+I'd like to think I did a through job documenting what the AI coded, and the actual code was exactly what I wanted, and to my n00b's eyes, perfect.  But, and this is a common thread so far, I must admit there were big chunks of the code I really didn't understand.
+
+2. In my Spring 2026, and Fall 2025 classes, the long suit of my studies was "constructionism."  In my foundation classes (4020, 4028, 5133) I "drilled down" on embodied cognition, apprenticeship, and my "stance" in all of this.  So the phenomenon I wanted to digitize for my assignment wasn't just a state machine, it was much closer to what/where I believe learning lives.  So I did a lot of coding, not of HTML, but like in 4020.
+
+I videoed a journeyman walking around workbenches in the carpentry workshop, creating ZoPDs along the way.  I created another .csv, this time a annotation of various slices of the video.
+
+I again pushed Qwen, this time to create an Activity Map of the act of hammering (which is branched, one hand holding the nail, the other the hammer), which it did very well from the video slices.  But I also wanted to decompose the ZoPD.  I foolishly tried to do this in .json.  At some point I stopped and said, look let's just take what we have, and forget about the .json.  The web app was helpful, but as apprentices are in the video, I can't say much more.
+
+3. 
+
 The Three Activity Parts
 1. AI Learning
 
@@ -29,6 +52,7 @@ In your write-up, share:
 
 Include a link to your AI transcript:
 You can share it from https://chat.openai.com/shareLinks to an external site.
+
 2. Design
 
 Create or describe an interactive experience that:
