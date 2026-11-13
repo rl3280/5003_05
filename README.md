@@ -21,7 +21,11 @@ I videoed a journeyman walking around workbenches in the carpentry workshop, cre
 
 I again pushed Qwen, this time to create an Activity Map of the act of hammering (which is branched, one hand holding the nail, the other the hammer), which it did very well from the video slices.  But I also wanted to decompose the ZoPD.  I foolishly tried to do this in .json.  At some point I stopped and said, look let's just take what we have, and forget about the .json.  The web app was helpful, but as apprentices are in the video, I can't say much more.
 
-3. 
+3. This was the only activity I didn't do alone.  I was paired up with another student who last year taught over 40 kindergarden students as a first year teacher.  I will take her stories to my grave.  What could I do to offer her something she could have used last year?
+   The question took me back to my first year teaching.  I didn't have time to do much of anything, including breathing, besides trying to negotiating with my 5 cohorts each day away from rioting.  All first year teachers can give to anything outside their 5 cohorts is just a few minutes. So that is where our design began.
+   So no Qwen et. al., instead I hit CLIO and researched best practices for inexperienced teachers to, as the research converged, the 3Rs: Reflect-Release-Recharge.  I used Notebook to collect the research articles, and then Gemini to align the research to CSS coding.  /chat documents the dialogic.
+
+4. Alone again in the dark deep seas, I started again by seeing what kind of .json I could generation using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew, from my spring tinkering, the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment, with the same problem: there was code in it that I just don't understand.  
 
 The Three Activity Parts
 1. AI Learning
