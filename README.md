@@ -29,7 +29,7 @@ I again pushed Qwen, this time to create an Activity Map of the act of hammering
 
 5. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed so far.  So here's my game plan:
 
-   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles, into code, using AI.  So this time, like last time, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
+   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this time, like last time, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
    I took a Circuit Express, and alligator-clipped strings of LEDs, each string a different color, to it.
    I'm going to code my functions first in blocks, then javascript, and then, starting with cloning the Adafruit Circuit Express git:
 
