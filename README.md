@@ -1,7 +1,7 @@
 # Feeling Through Function – Designing Expressive Reactions
 
 
-Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-100 (Adreno X1-85 GPU, and Hexagon NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's how I've done it, so far:
+Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-100 (Adreno X1-85 GPU, and Hexagon NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's what's happened, so far:
 
 1.  I filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
 - Pair & Share
@@ -25,7 +25,7 @@ I again pushed Qwen, this time to create an Activity Map of the act of hammering
    
    So no Qwen et. al., instead I hit CLIO and researched best practices for inexperienced teachers to, as the research converged, doing the 3Rs: Reflect-Release-Recharge.  I used Notebook to collect the research articles, and then Gemini to align the research to CSS coding.  /chat documents the dialogic.
 
-5. Alone again in the moonless deep seas, I untethered from port again in search of .json I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkering, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment: a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't understand.
+5. Alone again in the moonless deep seas, I untethered from port again querying .json quarry I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkering, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment: a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't get.
 
 6. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed so far.  So here's my game plan:
 
@@ -35,7 +35,9 @@ I again pushed Qwen, this time to create an Activity Map of the act of hammering
 
    https://github.com/adafruit/Adafruit-Circuit-Playground-Express-PCB
 
-   iterating/dialoging with AI through my VSCode/Continue/GenieX 
+   iterating/dialoging with AI through my VSCode/Continue/GenieX.
+
+   but no .json.
 
 The Three Activity Parts
 1. AI Learning
