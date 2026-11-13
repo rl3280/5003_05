@@ -2,7 +2,7 @@
 Feeling Through Function – Designing Expressive Reactions
 
 
-Over the summer, I bought a Levono Thinkpad ... (Snapdragon CPU, GPU, NPU), specifically for this class.  I wanted to "overclock" my activities.  Here's how I do so, so far:
+Over the summer, I bought a Levono Thinkpad ... (Snapdragon CPU, GPU, NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's how I've done it, so far:
 
 1.  I filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
 - Pair & Share
@@ -21,11 +21,21 @@ I videoed a journeyman walking around workbenches in the carpentry workshop, cre
 
 I again pushed Qwen, this time to create an Activity Map of the act of hammering (which is branched, one hand holding the nail, the other the hammer), which it did very well from the video slices.  But I also wanted to decompose the ZoPD.  I foolishly tried to do this in .json.  At some point I stopped and said, look let's just take what we have, and forget about the .json.  The web app was helpful, but as apprentices are in the video, I can't say much more.
 
-3. This was the only activity I didn't do alone.  I was paired up with another student who last year taught over 40 kindergarden students as a first year teacher.  I will take her stories to my grave.  What could I do to offer her something she could have used last year?
+3. This was the only activity I didn't do alone.  I was paired up with another student who last year taught over 40 kindergarden students as a first year teacher.  I will take her stories to my grave.  So, just like I was wondering in my first assignment, what could I do to offer teachers like her/me something we could have used last year?
    The question took me back to my first year teaching.  I didn't have time to do much of anything, including breathing, besides trying to negotiating with my 5 cohorts each day away from rioting.  All first year teachers can give to anything outside their 5 cohorts is just a few minutes. So that is where our design began.
-   So no Qwen et. al., instead I hit CLIO and researched best practices for inexperienced teachers to, as the research converged, the 3Rs: Reflect-Release-Recharge.  I used Notebook to collect the research articles, and then Gemini to align the research to CSS coding.  /chat documents the dialogic.
+   So no Qwen et. al., instead I hit CLIO and researched best practices for inexperienced teachers to, as the research converged, doing the 3Rs: Reflect-Release-Recharge.  I used Notebook to collect the research articles, and then Gemini to align the research to CSS coding.  /chat documents the dialogic.
 
-4. Alone again in the dark deep seas, I started again by seeing what kind of .json I could generation using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew, from my spring tinkering, the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment, with the same problem: there was code in it that I just don't understand.  
+4. Alone again in the dark deep seas, I untethered from port again in search of .json I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkering, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't understand.
+
+5. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed so far.  So here's my game plan:
+
+   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles, into code, using AI.  So this time, like last time, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
+   I took a Circuit Express, and alligator-clipped strings of LEDs, each string a different color, to it.
+   I'm going to code my functions first in blocks, then javascript, and then, starting with cloning the Adafruit Circuit Express git:
+
+   https://github.com/adafruit/Adafruit-Circuit-Playground-Express-PCB
+
+   iterating/dialoging with AI through my VSCode/Continue/GenieX 
 
 The Three Activity Parts
 1. AI Learning
