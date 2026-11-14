@@ -3,7 +3,7 @@
 
 Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-100 (Adreno X1-85 GPU, and Hexagon NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's what's happened, so far:
 
-1.  I filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
+1.  I used AI to filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
 - Pair & Share
 - Tutor
 - Reteach
