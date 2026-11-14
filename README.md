@@ -3,10 +3,12 @@
 
 Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-100 (Adreno X1-85 GPU, and Hexagon NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's what's happened, so far:
 
-1.  I used AI to filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
+1.  I, like every other journeyperson, generate voluminous reams of data assessing our apprentices.  Speaking now only for myself, that's about all I got to making it to the finish line on my courses.  I know how valuable my data is, but using to contemporaneously, as soon as the assessment is complete to 
 - Pair & Share
 - Tutor
 - Reteach
+
+    I used AI to filtered all of my Spring 2026 students' homework assignments, based on learning activities teachers commonly use prior homework scores when delivering:
 
     I used Illustrator to wireframe the UI/UX, exported .pngs, and passed it on to VSCODE/Continue/GenieX/Qwen3-VL-4B-Instruct.
 
