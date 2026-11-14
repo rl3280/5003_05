@@ -28,7 +28,7 @@ Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-
 
 5. Alone again in the moonless deep seas, I untethered from port again querying .json quarry I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkerings, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment: a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't get.
 
-6. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed so far.  So here's my game plan:
+6. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed to do so, so far.  So here's my game plan:
 
    My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this time, like last time, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
    I took a Circuit Express, and alligator-clipped strings of LEDs, each string a different color, to it.
