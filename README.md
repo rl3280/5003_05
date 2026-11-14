@@ -8,11 +8,11 @@ Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-
 - Tutor
 - Reteach
 
-I used Illustrator to wireframe the UI/UX, exported .pngs, and passed it on to VSCODE/Continue/GenieX/Qwen3-VL-4B-Instruct.
+    I used Illustrator to wireframe the UI/UX, exported .pngs, and passed it on to VSCODE/Continue/GenieX/Qwen3-VL-4B-Instruct.
 
-I also had an AGENTS.md.
+    I also had an AGENTS.md.
 
-I'd like to think I did a through job documenting what the AI coded, and the actual code was exactly what I wanted, and to my n00b's eyes, perfect.  But, and this is a common thread so far, I must admit there were big chunks of the code I really didn't understand.
+    I'd like to think I did a through job documenting what the AI coded, and the actual code was exactly what I wanted, and to my n00b's eyes, perfect.  But, and this is a common thread so far, I must admit there were big chunks of the code I really didn't understand.
 
 2. In my Spring 2026, and Fall 2025 classes, the long suit of my studies was "constructionism."  In my foundation classes (4020, 4028, 5133) I "drilled down" on embodied cognition, apprenticeship, and my "stance" in all of this.  So the phenomenon I wanted to decompose wasn't just a mechanical machine, it was much closer to what/where, I believe, learning lives.  So I did a lot of coding, not of HTML, but the 4020 kind.
 
