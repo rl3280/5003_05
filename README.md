@@ -30,7 +30,7 @@ Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-
 
 6. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed to do so, so far.  So here's my game plan:
 
-   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this time, like last time, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
+   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
    I took a Circuit Express, and alligator-clipped strings of LEDs, each string a different color, to it.
    I'm going to code my functions first in blocks, then javascript, and then, starting with cloning the Adafruit Circuit Express git:
 
