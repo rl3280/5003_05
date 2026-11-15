@@ -1,42 +1,10 @@
 # Feeling Through Function – Designing Expressive Reactions
 
+So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed to do so, so far.  So here's my game plan:
 
-Over the summer, I bought a Levono Thinkpad T14 Gen 6 Snapdragon X Elite X1E-78-100 (Adreno X1-85 GPU, and Hexagon NPU), specifically for this class.  I wanted to "overclock" my assignments.  Here's what's happened, so far in my 5003 assignments:
-
-1.  I, like every other journeyperson, generate voluminous reams of data assessing our apprentices.  Speaking now only for myself, that's about all I got to making it to the finish line on my courses.  I know how valuable my data is, but applying it contemporaneously, as soon as the assessment is done to 
-- Pair & Share
-- Tutor
-- Reteach
-
-    I need support, even apps I make with AI, narrowly tailored to my needs in the classroom.
+   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with a physical artifact, my Xmas lights, strings of different colored LEDs alligator-clipped to an Adafruit Circuit Playground Express, because you can toggle from block coding into Javascript.
    
-    So I used AI to write the code to make a web app that could filter all of my Spring 2026 students' homework assignments.  I fed it Illustrator wireframes exported as .pngs, and passed it on to VSCODE/Continue/GenieX/Qwen3-VL-4B-Instruct.
-
-    I also had an AGENTS.md.
-
-    I'd like to think I did a through job documenting what the AI coded, and the actual code was exactly what I wanted, and to my n00b's eyes, perfect.  But, _and this is the common thread_, I must admit there were big chunks of the code I really didn't understand.
-
-2. In my Spring 2026, and Fall 2025 classes, the long suit of my studies was "constructionism."  In my foundation classes (4020, 4028, 5133) I "drilled down" on embodied cognition, apprenticeship, and my "stance" in all of this.  So the phenomenon I wanted to decompose wasn't just a mechanical machine, it was much closer to what/where, I believe, learning lives.  So I did a lot of coding, not of HTML, but of the 4020 kind.
-
-    I videoed a journeyman walking around workbenches in the carpentry workshop, creating ZoPDs along the way.  I created another .csv, this time annotations of various slices of the video.
-   
-    I again pushed Qwen, this time to create an Activity Map of the act of hammering (which is branched, one hand holding the nail, the other the hammer), which it did very well from the video slices.  But I also wanted to decompose the ZoPD.  I foolishly tried to do this in .json.  At some point I stopped and said, look let's just take what we have, and forget about the .json.  The web app was helpful, but as apprentices are in the video, I can't say much more.
-
-4. This was the only activity I didn't do alone.  I was paired up with another student who last year taught over 40 kindergarden students as a first year teacher.  I will take her stories to my grave.  So, just like I was wondering in my first assignment, what could I do to offer teachers like her/me something we could have used last year?
-
-   The question took me back to my first year teaching.  I didn't have time to do much of anything, including breathing, besides daily negotiations with my 5 cohorts away from rioting.  All first year teachers can give to anything outside their 5 cohorts is just a few minutes. So that is where our design began.
-   
-   So no Qwen et. al., instead I hit CLIO and researched best practices for inexperienced teachers to, as the research converged, doing the 3Rs: Reflect-Release-Recharge.  I used Notebook to collect the research articles, and then Gemini to align the research to CSS coding.  /chat documents the dialogic.
-
-5. Alone again in the moonless deep seas, I untethered from port again querying .json quarry I could generate using Qwen from .jpgs I took of my Circuit Tile project in Spring 2026.  Same result, this time I cut bait only one week in, this time expecting the result.  So I converted the .jpgs to .svgs, and using ordinary English, explained what intuitively I knew from my spring tinkerings, what the rules of completing an electrical circuit with a battery, LED, resistor and wire should be.  The result was just like my first assignment: a product I could use in my electrical theory classes, with the same problem: there was code in it that I just didn't get.
-
-6. So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed to do so, so far.  So here's my game plan:
-
-   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with a physical artifact, an Adafruit Circuit Express, because you can toggle from block coding into Javascript.
-   I took a Circuit Express, and alligator-clipped strings of LEDs, each string a different color, to it.
-   I'm going to code my functions first in blocks, then javascript, and then, starting with cloning the Adafruit Circuit Express git:
-
-   https://github.com/adafruit/Adafruit-Circuit-Playground-Express-PCB
+   I'm going to code my expressive functions for my XmasLights first in blocks, then JavaScript, and then, 
 
    iterating/dialoging with AI through my VSCode/Continue/GenieX.
 
