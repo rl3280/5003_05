@@ -28,7 +28,7 @@ In your write-up, share:
     What you learned or rethought because of it
 
 Include a link to your AI transcript:
-You can share it from https://chat.openai.com/shareLinks to an external site.
+which will be at /chat
 
 2. Design
 
@@ -74,7 +74,8 @@ Implement your design in JavaScript. Your code should:
 
     Provide visible feedback to the user when state changes
 
-Don’t worry about polish — the goal is a working sketch, not a perfect app. Use CodePen (or your tool of choice) and link to your project clearly.
+Don’t worry about polish — the goal is a working sketch, not a perfect app. 
+
 What to Submit
 
 Please submit a Google Doc URL via Canvas. Your doc should include:
@@ -103,9 +104,8 @@ Please submit a Google Doc URL via Canvas. Your doc should include:
 
         Most important: Tell the story of your learning. What happened in between the lines — between you and AI, between you and your logic?
 
-    CodePen link
 
-    ChatGPT (or Copilot) transcript link
+    transcript link refers to /chat
 
 Reminder: I’m Not Just Looking for “What You Did”
 
