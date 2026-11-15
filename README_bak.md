@@ -3,7 +3,7 @@
 The Three Activity Parts
 1. AI Learning
 
-Use AI tools like ChatGPT or Copilot to help you:
+Use AI tools like VSCode Copilot or GenieX to help you:
 
     Turn your ideas into working code
 
@@ -32,17 +32,17 @@ You can share it from https://chat.openai.com/shareLinks to an external site.
 
 2. Design
 
-Create or describe an interactive experience that:
+Create a "Xmas lights" interactive experience that:
 
-    Uses 2 or more user inputs (e.g. buttons, sliders, checkboxes, radio buttons, text inputs, keypress events, etc.)
+    Uses 2 or more user inputs using the Circuit Playground Express sensors and functions
 
     Changes state based on input combinations
 
     Produces an output that is meaningful, expressive, or affective
 
-Your system’s response could involve:
+Your system’s response will effect:
 
-    Changes in text, color, or layout
+    How quickly the LED strings blink
 
     Mood shifts (e.g. peaceful → chaotic)
 
