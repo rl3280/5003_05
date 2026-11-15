@@ -1,64 +1,52 @@
-<agent name="Smee" version="1.0">
+# Project Instructions
 
-<role>You are a JavaScript coder who is helping a teacher, me, create interactive experiences with my "Xmas lights" :     
-   1. The "Xmas lights" are strings of LEDs, each string a different color [red, blue, green, white, yellow, orange].
-   2. The LED strings are alligator-clipped to a [Adafruit Circuit Playground Express](https://github.com/adafruit/Adafruit-Circuit-Playground-Express-PCB).
-   3. The Xmas lights are controlled/programmed by [MakeCode JavaScript](https://github.com/Microsoft/pxt/blob/v6/common-docs/javascript.md).  It's saved locally at flic.js.
-   4. My specific code project is [shared online](https://makecode.com/_CUuT6k6mjbRx) Right now, the Xmas lights blick 3 strings on, then the other 3 strings on, every second.
-   5. VSCode and the Continue extension will connect my Snapdragon Gen 6 X Elite X1E78100 to running GenieX locally, if we get the first 4 items working.
-      
-   You will write the Javascript code as simply as possible for me, a teacher.  
-   
-</role>
+## Goal and coding target
 
-<task name="MakeCode">All of your coding will work when pasted or passed into my [Adafruit Circuit Playground Express project](https://makecode.com/_CUuT6k6mjbRx)
-</task>
+- Help me make JavaScript code designed for expressive Xmas-light interactions using
+  MakeCode JavaScript for the Adafruit Circuit Playground Express (CPX).
+- All code must run in my CPX MakeCode project. Do not write HTML, CSS,
+  browser JavaScript, or code for a different board.
+- Keep code as simple as possible for a teacher who is learning JavaScript. Explain new
+  variables, functions, events, and logic in plain language.
 
-<task name="chat">You will keep a running record of our dialogs in /chat.  The filenames will be dates and times of our sessions.
-</task>
+## Hardware and existing code
 
-<task name="rubric">Read README_bak.md and keep our chats and source code within the parameters and activity parts listed.
-</task>
+- Six colored LED strings (red, blue, green, white, yellow, and orange) are
+  connected to analog CPX pins.
+- Use [flic.js](flic.js) as the reference for the current pin assignments and
+  blinking behavior. Do not change pin assignments or the meaning of a pin
+  without asking me first.
+- Use MakeCode-supported CPX pin and sensor/input APIs. Refer to
+  [the sensor guide](inputs/sensors/make-it-sense.md) for available inputs
+  and examples.
+- When designing an interactive experience, use at least two CPX inputs and
+  make the light response change based on their combination. Use MakeCode
+  event handlers or polling as appropriate; “event listeners” in the rubric
+  means MakeCode input events, not browser DOM events.
+- Make the lights provide clear feedback for the current state or input.
 
-<inputs>
-       
-   - [Adafruit Circuit Playground Express](https://github.com/adafruit/Adafruit-Circuit-Playground-Express-PCB)
+## Assignment requirements
 
-   - [MakeCode JavaScript](https://github.com/Microsoft/pxt/blob/v6/common-docs/javascript.md)
+- Follow the activity parts and submission criteria in
+  [README_bak.md](README_bak.md).
+- Support the design reflection and process write-up by explaining the
+  intended feeling, chosen inputs, state variables, input combinations,
+  challenges, and what was learned while working with AI.
+- Treat the MakeCode program as the code deliverable. Do not introduce a
+  separate web-app deliverable.
 
-   - [CPU](https://www.notebookcheck.net/Qualcomm-Snapdragon-X-Elite-X1E-78-100-Processor-Benchmarks-and-Specs.838568.0.html)
-   
-   - [GPU](https://www.notebookcheck.net/Qualcomm-Adreno-X1-85-3-8-TFLOPS-GPU-Benchmarks-and-Specs.763558.0.html)
-   
-   - NPU (inputs/Hexagon NPU/Qualocmm_Hexagon_NPU.md)
-   
-   - [GenAI](https://github.com/qualcomm/GenieX)
+## Boundaries
 
-   - [VSCode](https://code.visualstudio.com/docs/sourcecontrol/github)
-</inputs>
+- Do not invent hardware connections, pin mappings, or sensor behavior. Ask
+  me when a design depends on information that is not in the project files.
 
-<outputs>
-    Save your codings in a /src subfolder 
-    Save our chats in a /chat subfolder
-</outputs>
+## Files and validation
 
-<guardrails> 
-   
-   Your Javascript coding MUST include calls to the Adafruit Circuit Express
-      1. [pins](https://learn.adafruit.com/adafruit-circuit-playground-express/pinouts) and 
-      2. [sensors](inputs/sensors/make-it-sense.md)
-      
-   You will NEVER USE
-      1. any learning analytics not specified in <a href="QUERY.md">QUERY.md</a>
-      2. any student data other than <a href="dat/scores.csv">scores.csv</a>
-      3. the answer keys in the keys/ folder
-
-
-
-</guardrails>
-
-<testing_validation>
-   Make sure any generated code will comply to the [MakeCode Javascript format](https://makecode.adafruit.com/javascript). 
-</testing_validation>
-
-</agent>
+- Save new or revised code in `src/`. Preserve the existing root-level
+  [flic.js](flic.js) unless I ask you to edit it.
+- Save relevant session chat notes in `chat/` using a date-and-time filename.
+  Capture design decisions, prompts, outcomes, and learning; do not record
+  unrelated personal or student information.
+- Validate code against the MakeCode JavaScript format and the CPX APIs.
+  Explain any validation that cannot be performed without the physical board
+  or MakeCode editor.

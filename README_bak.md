@@ -62,7 +62,7 @@ In your doc, include:
 
 3. Code
 
-Implement your design in HTML, CSS, and JavaScript. Your code should:
+Implement your design in JavaScript. Your code should:
 
     Use variables to track internal state
 
