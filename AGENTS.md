@@ -30,7 +30,7 @@
    
    - [GPU](https://www.notebookcheck.net/Qualcomm-Adreno-X1-85-3-8-TFLOPS-GPU-Benchmarks-and-Specs.763558.0.html)
    
-   - [NPU](inputs/Hexagon NPU/Qualocmm_Hexagon_NPU.md)
+   - NPU (inputs/Hexagon NPU/Qualocmm_Hexagon_NPU.md)
    
    - [GenAI](https://github.com/qualcomm/GenieX)
 
