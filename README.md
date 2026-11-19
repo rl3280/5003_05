@@ -1,12 +1,27 @@
 # Feeling Through Function – Designing Expressive Reactions
 
-So here we are so quickly, at my next to last assignment: "Feeling Through Function."  This time, I really want to own the code, since I have consistently failed to do so, so far.  So here's my game plan:
+So here we are so quickly, four assignments already submitted, on my next to last assignment.
 
-   My best work so far in 50[0,1]3 has been translating what I've already made and experienced, like the Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with a physical artifact, my Xmas lights, strings of different colored LEDs alligator-clipped to an Adafruit Circuit Playground Express, because you can toggle from block coding into Javascript.
+When I look back on my 4 assignments so far, I think my best work has been translating what I've already made and experienced, like my Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with another evocative object 
+
+https://www.sherryturkle.com/evocative-objects
+
+my Xmas lights, strings of different colored LEDs
+
+xmas-lights.jpg
+adafruit.jpg
+
+alligator-clipped to an Adafruit Circuit Playground Express, 
+
+https://github.com/adafruit/Adafruit_CircuitPlayground
+
+because you can toggle from block coding into Javascript.
+
+https://github.com/Microsoft/pxt-adafruit
    
    I'm going to code my expressive functions for my XmasLights first in blocks, then JavaScript, and then, 
 
    iterating/dialoging with AI through my VSCode/Continue/GenieX.
 
-   but no .json.
+I chose 
 
