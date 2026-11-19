@@ -4,7 +4,7 @@
 
 - Help me create MakeCode JavaScript code designed for expressive Xmas-light interactions ([adafruit.jpg](adafruit.jpg) and [xmas-lights.jpg](xmas-lights.jpg)) controlled by a Adafruit Circuit Playground Express (CPX).
 - All code must run in my CPX MakeCode project. Do not write HTML, CSS, browser JavaScript, or code for a different board.
-- [README.md](README.md) is my reflections on what I want to get out of coding Assignment #5.
+- [README.md](README.md) is my reflections on what I want to get out of expressively coding my Xmas lights.
 - Keep code as simple as possible for a teacher who is learning JavaScript. Explain new variables, functions, events, and logic in plain language that refers to the behavior of the LED strings, controlled by the circuit board code.
 
 ## Hardware and existing code
