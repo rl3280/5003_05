@@ -8,8 +8,9 @@ https://www.sherryturkle.com/evocative-objects
 
 my Xmas lights, strings of different colored LEDs
 
-xmas-lights.jpg
-adafruit.jpg
+![xmas-lights.jpg](https://github.com/rl3280/5003_05/blob/main/xmas-lights.jpg)
+
+![adafruit.jpg](https://github.com/rl3280/5003_05/blob/main/adafruit.jpg)
 
 alligator-clipped to an Adafruit Circuit Playground Express, 
 
@@ -17,7 +18,7 @@ https://github.com/adafruit/Adafruit_CircuitPlayground
 
 because you can toggle from block coding into Javascript.
 
-https://github.com/Microsoft/pxt-adafruit
+https://makecode.com/_PLX1LFC74KHJ
    
    I'm going to code my expressive functions for my XmasLights first in blocks, then JavaScript, and then, 
 
