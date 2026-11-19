@@ -23,5 +23,3 @@ https://github.com/Microsoft/pxt-adafruit
 
    iterating/dialoging with AI through my VSCode/Continue/GenieX.
 
-I chose 
-
