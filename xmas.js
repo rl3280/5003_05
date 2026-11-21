@@ -1,25 +1,9 @@
-
+/** I calibrated the first two variables myself given room ambience */
 let soundThreshold = 120
 let darkThreshold = 13
 let activePattern = 0
 let sensorCovered = true
 let applauseRequested = false
-
-input.buttonA.onEvent(ButtonEvent.Down, function () {
-    if (activePattern == 1) {
-        activePattern = 0
-    } else {
-        activePattern = 1
-    }
-})
-
-input.buttonB.onEvent(ButtonEvent.Down, function () {
-    if (activePattern == 2) {
-        activePattern = 0
-    } else {
-        activePattern = 2
-    }
-})
 
 forever(function () {
     let isCovered = input.lightLevel() < darkThreshold
@@ -114,7 +98,24 @@ function cascade() {
     turnAllOff()
 }
 
-/** The functions below control the LEDs and timing. */
+/** The functions below I get as soon as I see them. */
+
+input.buttonA.onEvent(ButtonEvent.Down, function () {
+    if (activePattern == 1) {
+        activePattern = 0
+    } else {
+        activePattern = 1
+    }
+})
+
+input.buttonB.onEvent(ButtonEvent.Down, function () {
+    if (activePattern == 2) {
+        activePattern = 0
+    } else {
+        activePattern = 2
+    }
+})
+
 
 function green(isOn: boolean) {
     pins.A0.digitalWrite(isOn)
