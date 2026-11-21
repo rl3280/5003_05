@@ -8,9 +8,7 @@ my Xmas lights, strings of different colored LEDs
 
 ![adafruit.jpg](https://github.com/rl3280/5003_05/blob/main/adafruit.jpg)
 
-alligator-clipped to an Adafruit Circuit Playground Express, 
-
-https://github.com/adafruit/Adafruit_CircuitPlayground
+hooked into an ![Adafruit Circuit Playground Express](https://github.com/adafruit/Adafruit_CircuitPlayground)
 
 because you can toggle from block coding into Javascript.
 
