@@ -22,7 +22,7 @@ forever(function () {
     } else if (activePattern == 1) {
         cascade()
     } else if (activePattern == 2) {
-        colorConversation()
+        random3()
     } else {
         turnAllOff()
         pause(50)
@@ -122,6 +122,11 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
     }
     if (activePattern != 0 && activePattern != pattern) {
         turnAllOff()
+        return false
+    }
+    return true
+}
+
 
 /* ...................................................................... */
 /** The functions that follow are the behaviors/event states of the LED strings.  
@@ -156,10 +161,10 @@ function cascade() {
     turnAllOff()
 }
 
-/* colorConversation() randomly turns on 3 of the 6 LED strings, and then another 3 strings... 
+/* random3() randomly turns on 3 of the 6 LED strings, and then another 3 strings... 
 */
 
-function colorConversation() {
+function random3() {
     let colors = [0, 1, 2, 3, 4, 5]
     let selected = [false, false, false, false, false, false]
 
@@ -253,10 +258,5 @@ function turnAllOff() {
     blue(false)
     red(false)
     orange(false)
-}
-
-        return false
-    }
-    return true
 }
 
