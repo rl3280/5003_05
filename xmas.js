@@ -98,6 +98,61 @@ function cascade() {
     turnAllOff()
 }
 
+
+
+function pauseForMood(dayDelay: number, pattern: number): boolean {
+    let delay = dayDelay
+    if (input.switchRight()) {
+        delay = dayDelay * 4
+    }
+    return waitForPattern(delay, pattern)
+}
+
+function waitForApplause(): boolean {
+    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
+        if (input.soundLevel() >= soundThreshold) {
+            lightsForSound()
+            return false
+        }
+        pause(50)
+    }
+    if (input.soundLevel() >= soundThreshold) {
+        lightsForSound()
+        return false
+    }
+    return true
+}
+
+function waitForPattern(milliseconds: number, pattern: number): boolean {
+    let elapsed = 0
+    while (elapsed < milliseconds) {
+        if (input.soundLevel() >= soundThreshold) {
+            lightsForSound()
+            return false
+        }
+        if (applauseRequested) {
+            shadowApplause()
+            return false
+        }
+        if (activePattern != 0 && activePattern != pattern) {
+            turnAllOff()
+            return false
+        }
+        pause(50)
+        elapsed += 50
+    }
+    if (input.soundLevel() >= soundThreshold) {
+        lightsForSound()
+        return false
+    }
+    if (applauseRequested) {
+        shadowApplause()
+        return false
+    }
+    if (activePattern != 0 && activePattern != pattern) {
+        turnAllOff()
+
+
 /** The functions below I get as soon as I see them. */
 
 input.buttonA.onEvent(ButtonEvent.Down, function () {
@@ -159,57 +214,6 @@ function turnAllOff() {
     orange(false)
 }
 
-function pauseForMood(dayDelay: number, pattern: number): boolean {
-    let delay = dayDelay
-    if (input.switchRight()) {
-        delay = dayDelay * 4
-    }
-    return waitForPattern(delay, pattern)
-}
-
-function waitForApplause(): boolean {
-    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
-        if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
-            return false
-        }
-        pause(50)
-    }
-    if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
-        return false
-    }
-    return true
-}
-
-function waitForPattern(milliseconds: number, pattern: number): boolean {
-    let elapsed = 0
-    while (elapsed < milliseconds) {
-        if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
-            return false
-        }
-        if (applauseRequested) {
-            shadowApplause()
-            return false
-        }
-        if (activePattern != 0 && activePattern != pattern) {
-            turnAllOff()
-            return false
-        }
-        pause(50)
-        elapsed += 50
-    }
-    if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
-        return false
-    }
-    if (applauseRequested) {
-        shadowApplause()
-        return false
-    }
-    if (activePattern != 0 && activePattern != pattern) {
-        turnAllOff()
         return false
     }
     return true
