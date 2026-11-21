@@ -1,3 +1,8 @@
+/* As I've been commenting through this code, I've begun to understand the color coding here:
+lightblue = constants, and sensor readings
+red = function, logical statement, let
+orange = variable
+
 /** I calibrated the first two variables myself given room ambience */
 let soundThreshold = 120
 let darkThreshold = 13
@@ -5,28 +10,7 @@ let activePattern = 0
 let sensorCovered = true
 let applauseRequested = false
 
-/** If I slide the switch right, the LEDs will blink at a 4x slower rate */
-
-function pauseForMood(dayDelay: number, pattern: number): boolean {
-    let delay = dayDelay
-    if (input.switchRight()) {
-        delay = dayDelay * 4
-    }
-    return waitForPattern(delay, pattern)
-}
-
-/** If I cover the light sensor, all the LEDs will blink three times */
-
-forever(function () {
-    let isCovered = input.lightLevel() < darkThreshold
-    if (isCovered && !sensorCovered) {
-        applauseRequested = true
-    }
-    sensorCovered = isCovered
-    pause(50)
-})
-
-/** So long as I blow my whistle, all the LEDs will stay ON */
+/** This is the main "forever" loop that is a MakeCode block code. input.soundLevel() is an EventListener.  */
 
 forever(function () {
     if (input.soundLevel() >= soundThreshold) {
@@ -43,15 +27,58 @@ forever(function () {
     }
 })
 
-/** like I said in the README, this is the first time I could really trace the code.  When I blow my whistle,  input.soundLevel() exceeds the soundThreshold I calibrated, and turnAllon is called */
+
+
+/** When I blow my whistle,  input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForSound */
+
+function waitForApplause(): boolean {
+    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
+        if (input.soundLevel() >= soundThreshold) {
+            lightsForSound()
+            return false
+        }
+        pause(100)
+    }
+    if (input.soundLevel() >= soundThreshold) {
+        lightsForSound()
+        return false
+    }
+    return true
+}
 
 function lightsForSound() {
     turnAllOn()
     while (input.soundLevel() >= soundThreshold) {
-        pause(50)
+        pause(100)
     }
     turnAllOff()
 }
+
+
+/** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. */
+
+forever(function () {
+    let isCovered = input.lightLevel() < darkThreshold
+    if (isCovered && !sensorCovered) {
+        applauseRequested = true
+    }
+    sensorCovered = isCovered
+    pause(50)
+})
+
+
+/** Another EventListener, because if I slide the switch right, the LEDs will blink at a 4x slower rate.
+This doesn't have to be a forever loop though, because I manually toggle the slide switch.
+.  */
+
+function pauseForMood(dayDelay: number, pattern: number): boolean {
+    let delay = dayDelay
+    if (input.switchRight()) {
+        delay = dayDelay * 4
+    }
+    return waitForPattern(delay, pattern)
+}
+
 
 /** this was the first function I coded for this assignment.  The first LED string turns on , the second, until 3 LED strings are on, and then the first string turns off when the forth turns on, and so forth */
 
@@ -97,6 +124,9 @@ function shadowApplause() {
     }
 }
 
+/* colorConversation() randomly turns on 3 of the 6 LED strings, and then another 3 strings... 
+*/
+
 function colorConversation() {
     let colors = [0, 1, 2, 3, 4, 5]
     let selected = [false, false, false, false, false, false]
@@ -121,20 +151,6 @@ function colorConversation() {
 }
 
 
-function waitForApplause(): boolean {
-    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
-        if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
-            return false
-        }
-        pause(50)
-    }
-    if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
-        return false
-    }
-    return true
-}
 
 function waitForPattern(milliseconds: number, pattern: number): boolean {
     let elapsed = 0
@@ -168,7 +184,13 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
 
 /** The functions below I get as soon as I see them. 
 
-...................................................................
+activePattern
+0
+1
+2
+
+Button A turns on/off the cascade function 
+Button B turns on/off the 
 
 */
 
