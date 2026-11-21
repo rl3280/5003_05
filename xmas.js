@@ -5,6 +5,18 @@ let activePattern = 0
 let sensorCovered = true
 let applauseRequested = false
 
+/** If I slide the switch right, the LEDs will blink at a 4x slower rate */
+
+function pauseForMood(dayDelay: number, pattern: number): boolean {
+    let delay = dayDelay
+    if (input.switchRight()) {
+        delay = dayDelay * 4
+    }
+    return waitForPattern(delay, pattern)
+}
+
+/** If I cover the light sensor, all the LEDs will blink three times */
+
 forever(function () {
     let isCovered = input.lightLevel() < darkThreshold
     if (isCovered && !sensorCovered) {
@@ -13,6 +25,8 @@ forever(function () {
     sensorCovered = isCovered
     pause(50)
 })
+
+/** So long as I blow my whistle, all the LEDs will stay ON */
 
 forever(function () {
     if (input.soundLevel() >= soundThreshold) {
@@ -28,6 +42,8 @@ forever(function () {
         pause(50)
     }
 })
+
+/** like I said in the README, this is the first time I could really trace the code.  When I blow my whistle,  input.soundLevel() exceeds the soundThreshold I calibrated, and turnAllon is called */
 
 function lightsForSound() {
     turnAllOn()
@@ -100,14 +116,6 @@ function cascade() {
 
 
 
-function pauseForMood(dayDelay: number, pattern: number): boolean {
-    let delay = dayDelay
-    if (input.switchRight()) {
-        delay = dayDelay * 4
-    }
-    return waitForPattern(delay, pattern)
-}
-
 function waitForApplause(): boolean {
     for (let elapsed = 0; elapsed < 150; elapsed += 50) {
         if (input.soundLevel() >= soundThreshold) {
@@ -153,7 +161,11 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
         turnAllOff()
 
 
-/** The functions below I get as soon as I see them. */
+/** The functions below I get as soon as I see them. 
+
+...................................................................
+
+*/
 
 input.buttonA.onEvent(ButtonEvent.Down, function () {
     if (activePattern == 1) {
