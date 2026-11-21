@@ -53,6 +53,39 @@ function lightsForSound() {
     turnAllOff()
 }
 
+/** this was the first function I coded for this assignment.  The first LED string turns on , the second, until 3 LED strings are on, and then the first string turns off when the forth turns on, and so forth */
+
+function cascade() {
+    green(true)
+    if (!pauseForMood(250, 1)) return
+    yellow(true)
+    if (!pauseForMood(250, 1)) return
+    green(false)
+    if (!pauseForMood(250, 1)) return
+    white(true)
+    if (!pauseForMood(250, 1)) return
+    yellow(false)
+    if (!pauseForMood(250, 1)) return
+    blue(true)
+    if (!pauseForMood(250, 1)) return
+    white(false)
+    if (!pauseForMood(250, 1)) return
+    red(true)
+    if (!pauseForMood(250, 1)) return
+    blue(false)
+    if (!pauseForMood(250, 1)) return
+    orange(true)
+    if (!pauseForMood(250, 1)) return
+    red(false)
+    if (!pauseForMood(250, 1)) return
+
+    turnAllOff()
+}
+
+
+
+
+
 function shadowApplause() {
     applauseRequested = false
     turnAllOff()
@@ -86,34 +119,6 @@ function colorConversation() {
     turnAllOff()
     if (!pauseForMood(250, 2)) return
 }
-
-function cascade() {
-    green(true)
-    if (!pauseForMood(250, 1)) return
-    yellow(true)
-    if (!pauseForMood(250, 1)) return
-    green(false)
-    if (!pauseForMood(250, 1)) return
-    white(true)
-    if (!pauseForMood(250, 1)) return
-    yellow(false)
-    if (!pauseForMood(250, 1)) return
-    blue(true)
-    if (!pauseForMood(250, 1)) return
-    white(false)
-    if (!pauseForMood(250, 1)) return
-    red(true)
-    if (!pauseForMood(250, 1)) return
-    blue(false)
-    if (!pauseForMood(250, 1)) return
-    orange(true)
-    if (!pauseForMood(250, 1)) return
-    red(false)
-    if (!pauseForMood(250, 1)) return
-
-    turnAllOff()
-}
-
 
 
 function waitForApplause(): boolean {
