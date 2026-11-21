@@ -119,7 +119,7 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
 This doesn't have to be a forever loop though, because I manually toggle the slide switch.
 .  */
 
-function pauseForMood(dayDelay: number, pattern: number): boolean {
+function speedRequest(dayDelay: number, pattern: number): boolean {
     let delay = dayDelay
     if (input.switchRight()) {
         delay = dayDelay * 4
@@ -136,27 +136,27 @@ and then the first string turns off when the forth turns on, and so forth */
 
 function cascade() {
     green(true)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     yellow(true)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     green(false)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     white(true)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     yellow(false)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     blue(true)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     white(false)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     red(true)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     blue(false)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     orange(true)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
     red(false)
-    if (!pauseForMood(250, 1)) return
+    if (!speedRequest(250, 1)) return
 
     turnAllOff()
 }
@@ -182,9 +182,9 @@ function random3() {
     blue(selected[3])
     red(selected[4])
     orange(selected[5])
-    if (!pauseForMood(500, 2)) return
+    if (!speedRequest(500, 2)) return
     turnAllOff()
-    if (!pauseForMood(250, 2)) return
+    if (!speedRequest(250, 2)) return
 }
      
 /* ...................................................................... */
