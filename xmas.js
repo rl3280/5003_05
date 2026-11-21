@@ -1,7 +1,7 @@
 /* As I've been commenting through this code, I've begun to understand the color coding here:
 lightblue = constants, and sensor readings
 red = function, logical statement, let
-orange = variable
+orange = variable/parameter
 
 /** I calibrated the first two variables myself given room ambience */
 let soundThreshold = 120
@@ -39,8 +39,6 @@ forever(function () {
     sensorCovered = isCovered
     pause(50)
 })
-
-
 
 /** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForSound 
 why do i need two if.. here?
