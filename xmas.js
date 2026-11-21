@@ -29,6 +29,19 @@ forever(function () {
     }
 })
 
+/** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. */
+
+forever(function () {
+    let isCovered = input.lightLevel() < darkThreshold
+    if (isCovered && !sensorCovered) {
+        applauseRequested = true
+    }
+    sensorCovered = isCovered
+    pause(50)
+})
+
+
+
 /** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForSound 
 why do i need two if.. here?
 
@@ -69,31 +82,6 @@ function shadowApplause() {
 }
 
 
-
-/** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. */
-
-forever(function () {
-    let isCovered = input.lightLevel() < darkThreshold
-    if (isCovered && !sensorCovered) {
-        applauseRequested = true
-    }
-    sensorCovered = isCovered
-    pause(50)
-})
-
-
-/** Another EventListener, because if I slide the switch right, the LEDs will blink at a 4x slower rate.
-This doesn't have to be a forever loop though, because I manually toggle the slide switch.
-.  */
-
-function pauseForMood(dayDelay: number, pattern: number): boolean {
-    let delay = dayDelay
-    if (input.switchRight()) {
-        delay = dayDelay * 4
-    }
-    return waitForPattern(delay, pattern)
-}
-
 function waitForPattern(milliseconds: number, pattern: number): boolean {
     let elapsed = 0
     while (elapsed < milliseconds) {
@@ -125,6 +113,20 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
         return false
     }
     return true
+}
+
+
+
+/** Another EventListener, because if I slide the switch right, the LEDs will blink at a 4x slower rate.
+This doesn't have to be a forever loop though, because I manually toggle the slide switch.
+.  */
+
+function pauseForMood(dayDelay: number, pattern: number): boolean {
+    let delay = dayDelay
+    if (input.switchRight()) {
+        delay = dayDelay * 4
+    }
+    return waitForPattern(delay, pattern)
 }
 
 
