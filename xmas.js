@@ -10,7 +10,9 @@ let activePattern = 0
 let sensorCovered = true
 let applauseRequested = false
 
-/** This is the main "forever" loop that is a MakeCode block code. input.soundLevel() is an EventListener.  */
+/** This is the main "forever" loop that is a MakeCode block code. input.soundLevel() is an EventListener for my whistle.  
+The 'else' functions will control the LED strings in different ways.
+*/
 
 forever(function () {
     if (input.soundLevel() >= soundThreshold) {
@@ -27,9 +29,10 @@ forever(function () {
     }
 })
 
+/** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForSound 
+why do i need two if.. here?
 
-
-/** When I blow my whistle,  input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForSound */
+*/
 
 function waitForApplause(): boolean {
     for (let elapsed = 0; elapsed < 150; elapsed += 50) {
@@ -80,35 +83,6 @@ function pauseForMood(dayDelay: number, pattern: number): boolean {
 }
 
 
-/** this was the first function I coded for this assignment.  The first LED string turns on , the second, until 3 LED strings are on, and then the first string turns off when the forth turns on, and so forth */
-
-function cascade() {
-    green(true)
-    if (!pauseForMood(250, 1)) return
-    yellow(true)
-    if (!pauseForMood(250, 1)) return
-    green(false)
-    if (!pauseForMood(250, 1)) return
-    white(true)
-    if (!pauseForMood(250, 1)) return
-    yellow(false)
-    if (!pauseForMood(250, 1)) return
-    blue(true)
-    if (!pauseForMood(250, 1)) return
-    white(false)
-    if (!pauseForMood(250, 1)) return
-    red(true)
-    if (!pauseForMood(250, 1)) return
-    blue(false)
-    if (!pauseForMood(250, 1)) return
-    orange(true)
-    if (!pauseForMood(250, 1)) return
-    red(false)
-    if (!pauseForMood(250, 1)) return
-
-    turnAllOff()
-}
-
 
 
 
@@ -123,34 +97,6 @@ function shadowApplause() {
         if (!waitForApplause()) return
     }
 }
-
-/* colorConversation() randomly turns on 3 of the 6 LED strings, and then another 3 strings... 
-*/
-
-function colorConversation() {
-    let colors = [0, 1, 2, 3, 4, 5]
-    let selected = [false, false, false, false, false, false]
-
-    for (let i = 0; i < 3; i++) {
-        let randomIndex = Math.randomRange(i, 5)
-        let chosenColor = colors[randomIndex]
-        colors[randomIndex] = colors[i]
-        colors[i] = chosenColor
-        selected[chosenColor] = true
-    }
-
-    green(selected[0])
-    yellow(selected[1])
-    white(selected[2])
-    blue(selected[3])
-    red(selected[4])
-    orange(selected[5])
-    if (!pauseForMood(500, 2)) return
-    turnAllOff()
-    if (!pauseForMood(250, 2)) return
-}
-
-
 
 function waitForPattern(milliseconds: number, pattern: number): boolean {
     let elapsed = 0
@@ -181,16 +127,76 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
     if (activePattern != 0 && activePattern != pattern) {
         turnAllOff()
 
+/** The functions that follow are the behaviors/event states of the LED strings.  
+cascade() The first LED string turns on , the second, until 3 LED strings are on, 
+and then the first string turns off when the forth turns on, and so forth */
+
+function cascade() {
+    green(true)
+    if (!pauseForMood(250, 1)) return
+    yellow(true)
+    if (!pauseForMood(250, 1)) return
+    green(false)
+    if (!pauseForMood(250, 1)) return
+    white(true)
+    if (!pauseForMood(250, 1)) return
+    yellow(false)
+    if (!pauseForMood(250, 1)) return
+    blue(true)
+    if (!pauseForMood(250, 1)) return
+    white(false)
+    if (!pauseForMood(250, 1)) return
+    red(true)
+    if (!pauseForMood(250, 1)) return
+    blue(false)
+    if (!pauseForMood(250, 1)) return
+    orange(true)
+    if (!pauseForMood(250, 1)) return
+    red(false)
+    if (!pauseForMood(250, 1)) return
+
+    turnAllOff()
+}
+
+/* colorConversation() randomly turns on 3 of the 6 LED strings, and then another 3 strings... 
+*/
+
+function colorConversation() {
+    let colors = [0, 1, 2, 3, 4, 5]
+    let selected = [false, false, false, false, false, false]
+
+    for (let i = 0; i < 3; i++) {
+        let randomIndex = Math.randomRange(i, 5)
+        let chosenColor = colors[randomIndex]
+        colors[randomIndex] = colors[i]
+        colors[i] = chosenColor
+        selected[chosenColor] = true
+    }
+
+    green(selected[0])
+    yellow(selected[1])
+    white(selected[2])
+    blue(selected[3])
+    red(selected[4])
+    orange(selected[5])
+    if (!pauseForMood(500, 2)) return
+    turnAllOff()
+    if (!pauseForMood(250, 2)) return
+}
+
+
+
+        
 
 /** The functions below I get as soon as I see them. 
 
 activePattern
-0
-1
-2
+0 
+1 cascade
+2 random3
 
 Button A turns on/off the cascade function 
-Button B turns on/off the 
+Button B turns on/off the random3 function
 
 */
 
