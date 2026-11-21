@@ -1,6 +1,6 @@
 # Feeling Through Function – Designing Expressive Reactions
 
-My biggest takeaway so far in this class, four assignments already submitted, is that my best work has been translating what I've already made and experienced, like my Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with another evocative object https://www.sherryturkle.com/evocative-objects
+My biggest takeaway so far in this class, four assignments already submitted, is that my best work has been translating what I've already made and experienced, like my Circuit Tiles and my first year teaching, into code, using AI.  So this iteration, like last iteration, I'm going to start with another ![evocative object](https://www.sherryturkle.com/evocative-objects)
 
 my Xmas lights, strings of different colored LEDs
 
