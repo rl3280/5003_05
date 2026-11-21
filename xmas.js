@@ -34,7 +34,7 @@ why do i need two if.. here?
 
 */
 
-function waitForApplause(): boolean {
+function waitForWhistle(): boolean {
     for (let elapsed = 0; elapsed < 150; elapsed += 50) {
         if (input.soundLevel() >= soundThreshold) {
             lightsForSound()
@@ -56,6 +56,18 @@ function lightsForSound() {
     }
     turnAllOff()
 }
+
+function shadowApplause() {
+    applauseRequested = false
+    turnAllOff()
+    for (let flash = 0; flash < 3; flash++) {
+        turnAllOn()
+        if (!waitForWhistle()) return
+        turnAllOff()
+        if (!waitForWhistle()) return
+    }
+}
+
 
 
 /** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. */
@@ -80,22 +92,6 @@ function pauseForMood(dayDelay: number, pattern: number): boolean {
         delay = dayDelay * 4
     }
     return waitForPattern(delay, pattern)
-}
-
-
-
-
-
-
-function shadowApplause() {
-    applauseRequested = false
-    turnAllOff()
-    for (let flash = 0; flash < 3; flash++) {
-        turnAllOn()
-        if (!waitForApplause()) return
-        turnAllOff()
-        if (!waitForApplause()) return
-    }
 }
 
 function waitForPattern(milliseconds: number, pattern: number): boolean {
@@ -127,9 +123,11 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
     if (activePattern != 0 && activePattern != pattern) {
         turnAllOff()
 
+/* ...................................................................... */
 /** The functions that follow are the behaviors/event states of the LED strings.  
 cascade() The first LED string turns on , the second, until 3 LED strings are on, 
 and then the first string turns off when the forth turns on, and so forth */
+/* ...................................................................... */
 
 function cascade() {
     green(true)
@@ -183,11 +181,8 @@ function colorConversation() {
     turnAllOff()
     if (!pauseForMood(250, 2)) return
 }
-
-
-
-        
-
+     
+/* ...................................................................... */
 /** The functions below I get as soon as I see them. 
 
 activePattern
@@ -198,7 +193,8 @@ activePattern
 Button A turns on/off the cascade function 
 Button B turns on/off the random3 function
 
-*/
+/* ...................................................................... */
+
 
 input.buttonA.onEvent(ButtonEvent.Down, function () {
     if (activePattern == 1) {
