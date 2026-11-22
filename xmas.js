@@ -16,9 +16,9 @@ The 'else' functions will control the LED strings in different ways.
 
 forever(function () {
     if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
+        lightsForWhistle()
     } else if (applauseRequested) {
-        shadowApplause()
+        coverLights()
     } else if (activePattern == 1) {
         cascade()
     } else if (activePattern == 2) {
@@ -29,7 +29,10 @@ forever(function () {
     }
 })
 
-/** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. */
+/** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. 
+why can't isCovered && !sensorCovered be merged into one function?
+
+*/
 
 forever(function () {
     let isCovered = input.lightLevel() < darkThreshold
@@ -40,7 +43,7 @@ forever(function () {
     pause(50)
 })
 
-/** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForSound 
+/** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForWhistle 
 why do i need two if.. here?
 
 */
@@ -48,19 +51,19 @@ why do i need two if.. here?
 function waitForWhistle(): boolean {
     for (let elapsed = 0; elapsed < 150; elapsed += 50) {
         if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
+            lightsForWhistle()
             return false
         }
         pause(100)
     }
     if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
+        lightsForWhistle()
         return false
     }
     return true
 }
 
-function lightsForSound() {
+function lightsForWhistle() {
     turnAllOn()
     while (input.soundLevel() >= soundThreshold) {
         pause(100)
@@ -68,7 +71,7 @@ function lightsForSound() {
     turnAllOff()
 }
 
-function shadowApplause() {
+function coverLights() {
     applauseRequested = false
     turnAllOff()
     for (let flash = 0; flash < 3; flash++) {
@@ -84,11 +87,11 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
     let elapsed = 0
     while (elapsed < milliseconds) {
         if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
+            lightsForWhistle()
             return false
         }
         if (applauseRequested) {
-            shadowApplause()
+            coverLights()
             return false
         }
         if (activePattern != 0 && activePattern != pattern) {
@@ -99,11 +102,11 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
         elapsed += 50
     }
     if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
+        lightsForWhistle()
         return false
     }
     if (applauseRequested) {
-        shadowApplause()
+        coverLights()
         return false
     }
     if (activePattern != 0 && activePattern != pattern) {
