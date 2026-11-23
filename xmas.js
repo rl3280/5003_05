@@ -1,25 +1,38 @@
+/* As I've been commenting through this code, I've begun to understand the color coding here:
+lightblue = constants, and sensor readings
+red = function, logical statement, let
+orange = variable/parameter
 
+/** I calibrated the first two variables myself given room ambience */
 let soundThreshold = 120
 let darkThreshold = 13
 let activePattern = 0
 let sensorCovered = true
 let applauseRequested = false
 
-input.buttonA.onEvent(ButtonEvent.Down, function () {
-    if (activePattern == 1) {
-        activePattern = 0
+/** This is the main "forever" loop that is a MakeCode block code. input.soundLevel() is an EventListener for my whistle.  
+The 'else' functions will control the LED strings in different ways.
+*/
+
+forever(function () {
+    if (input.soundLevel() >= soundThreshold) {
+        lightsForWhistle()
+    } else if (applauseRequested) {
+        coverLights()
+    } else if (activePattern == 1) {
+        cascade()
+    } else if (activePattern == 2) {
+        random3()
     } else {
-        activePattern = 1
+        turnAllOff()
+        pause(50)
     }
 })
 
-input.buttonB.onEvent(ButtonEvent.Down, function () {
-    if (activePattern == 2) {
-        activePattern = 0
-    } else {
-        activePattern = 2
-    }
-})
+/** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. 
+why can't isCovered && !sensorCovered be merged into one function?
+
+*/
 
 forever(function () {
     let isCovered = input.lightLevel() < darkThreshold
@@ -30,41 +43,131 @@ forever(function () {
     pause(50)
 })
 
-forever(function () {
-    if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
-    } else if (applauseRequested) {
-        shadowApplause()
-    } else if (activePattern == 1) {
-        cascade()
-    } else if (activePattern == 2) {
-        colorConversation()
-    } else {
-        turnAllOff()
-        pause(50)
-    }
-})
+/** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForWhistle 
+why do i need two if.. here?
 
-function lightsForSound() {
+*/
+
+function waitForWhistle(): boolean {
+    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
+        if (input.soundLevel() >= soundThreshold) {
+            lightsForWhistle()
+            return false
+        }
+        pause(100)
+    }
+    if (input.soundLevel() >= soundThreshold) {
+        lightsForWhistle()
+        return false
+    }
+    return true
+}
+
+function lightsForWhistle() {
     turnAllOn()
     while (input.soundLevel() >= soundThreshold) {
-        pause(50)
+        pause(100)
     }
     turnAllOff()
 }
 
-function shadowApplause() {
+function coverLights() {
     applauseRequested = false
     turnAllOff()
     for (let flash = 0; flash < 3; flash++) {
         turnAllOn()
-        if (!waitForApplause()) return
+        if (!waitForWhistle()) return
         turnAllOff()
-        if (!waitForApplause()) return
+        if (!waitForWhistle()) return
     }
 }
 
-function colorConversation() {
+
+function waitForPattern(milliseconds: number, pattern: number): boolean {
+    let elapsed = 0
+    while (elapsed < milliseconds) {
+        if (input.soundLevel() >= soundThreshold) {
+            lightsForWhistle()
+            return false
+        }
+        if (applauseRequested) {
+            coverLights()
+            return false
+        }
+        if (activePattern != 0 && activePattern != pattern) {
+            turnAllOff()
+            return false
+        }
+        pause(50)
+        elapsed += 50
+    }
+    if (input.soundLevel() >= soundThreshold) {
+        lightsForWhistle()
+        return false
+    }
+    if (applauseRequested) {
+        coverLights()
+        return false
+    }
+    if (activePattern != 0 && activePattern != pattern) {
+        turnAllOff()
+        return false
+    }
+    return true
+}
+
+
+
+/** Another EventListener, because if I slide the switch right, the LEDs will blink at a 4x slower rate.
+This doesn't have to be a forever loop though, because I manually toggle the slide switch.
+.  */
+
+function speedRequest(dayDelay: number, pattern: number): boolean {
+    let delay = dayDelay
+    if (input.switchRight()) {
+        delay = dayDelay * 4
+    }
+    return waitForPattern(delay, pattern)
+}
+
+
+/* ...................................................................... */
+/** The functions that follow are the behaviors/event states of the LED strings.  
+cascade() The first LED string turns on , the second, until 3 LED strings are on, 
+and then the first string turns off when the forth turns on, and so forth */
+/* ...................................................................... */
+
+function cascade() {
+    green(true)
+    if (!speedRequest(250, 1)) return
+    yellow(true)
+    if (!speedRequest(250, 1)) return
+    green(false)
+    if (!speedRequest(250, 1)) return
+    white(true)
+    if (!speedRequest(250, 1)) return
+    yellow(false)
+    if (!speedRequest(250, 1)) return
+    blue(true)
+    if (!speedRequest(250, 1)) return
+    white(false)
+    if (!speedRequest(250, 1)) return
+    red(true)
+    if (!speedRequest(250, 1)) return
+    blue(false)
+    if (!speedRequest(250, 1)) return
+    orange(true)
+    if (!speedRequest(250, 1)) return
+    red(false)
+    if (!speedRequest(250, 1)) return
+
+    turnAllOff()
+}
+
+/* random3() randomly turns on 3 of the 6 LED strings, and then another 3 strings... 
+*/
+
+function random3() {
     let colors = [0, 1, 2, 3, 4, 5]
     let selected = [false, false, false, false, false, false]
 
@@ -82,39 +185,41 @@ function colorConversation() {
     blue(selected[3])
     red(selected[4])
     orange(selected[5])
-    if (!pauseForMood(500, 2)) return
+    if (!speedRequest(500, 2)) return
     turnAllOff()
-    if (!pauseForMood(250, 2)) return
+    if (!speedRequest(250, 2)) return
 }
+     
+/* ...................................................................... */
+/** The functions below I get as soon as I see them. 
 
-function cascade() {
-    green(true)
-    if (!pauseForMood(250, 1)) return
-    yellow(true)
-    if (!pauseForMood(250, 1)) return
-    green(false)
-    if (!pauseForMood(250, 1)) return
-    white(true)
-    if (!pauseForMood(250, 1)) return
-    yellow(false)
-    if (!pauseForMood(250, 1)) return
-    blue(true)
-    if (!pauseForMood(250, 1)) return
-    white(false)
-    if (!pauseForMood(250, 1)) return
-    red(true)
-    if (!pauseForMood(250, 1)) return
-    blue(false)
-    if (!pauseForMood(250, 1)) return
-    orange(true)
-    if (!pauseForMood(250, 1)) return
-    red(false)
-    if (!pauseForMood(250, 1)) return
+activePattern
+0 
+1 cascade
+2 random3
 
-    turnAllOff()
-}
+Button A turns on/off the cascade function 
+Button B turns on/off the random3 function
 
-/** The functions below control the LEDs and timing. */
+/* ...................................................................... */
+
+
+input.buttonA.onEvent(ButtonEvent.Down, function () {
+    if (activePattern == 1) {
+        activePattern = 0
+    } else {
+        activePattern = 1
+    }
+})
+
+input.buttonB.onEvent(ButtonEvent.Down, function () {
+    if (activePattern == 2) {
+        activePattern = 0
+    } else {
+        activePattern = 2
+    }
+})
+
 
 function green(isOn: boolean) {
     pins.A0.digitalWrite(isOn)
@@ -156,61 +261,5 @@ function turnAllOff() {
     blue(false)
     red(false)
     orange(false)
-}
-
-function pauseForMood(dayDelay: number, pattern: number): boolean {
-    let delay = dayDelay
-    if (input.switchRight()) {
-        delay = dayDelay * 4
-    }
-    return waitForPattern(delay, pattern)
-}
-
-function waitForApplause(): boolean {
-    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
-        if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
-            return false
-        }
-        pause(50)
-    }
-    if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
-        return false
-    }
-    return true
-}
-
-function waitForPattern(milliseconds: number, pattern: number): boolean {
-    let elapsed = 0
-    while (elapsed < milliseconds) {
-        if (input.soundLevel() >= soundThreshold) {
-            lightsForSound()
-            return false
-        }
-        if (applauseRequested) {
-            shadowApplause()
-            return false
-        }
-        if (activePattern != 0 && activePattern != pattern) {
-            turnAllOff()
-            return false
-        }
-        pause(50)
-        elapsed += 50
-    }
-    if (input.soundLevel() >= soundThreshold) {
-        lightsForSound()
-        return false
-    }
-    if (applauseRequested) {
-        shadowApplause()
-        return false
-    }
-    if (activePattern != 0 && activePattern != pattern) {
-        turnAllOff()
-        return false
-    }
-    return true
 }
 
