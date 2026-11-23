@@ -8,7 +8,7 @@ let soundThreshold = 120
 let darkThreshold = 13
 let activePattern = 0
 let sensorCovered = true
-let applauseRequested = false
+let noLightRequest = false
 
 /** This is the main "forever" loop that is a MakeCode block code. input.soundLevel() is an EventListener for my whistle.  
 The 'else' functions will control the LED strings in different ways.
@@ -17,7 +17,7 @@ The 'else' functions will control the LED strings in different ways.
 forever(function () {
     if (input.soundLevel() >= soundThreshold) {
         lightsForWhistle()
-    } else if (applauseRequested) {
+    } else if (noLightRequest) {
         coverLights()
     } else if (activePattern == 1) {
         cascade()
@@ -30,26 +30,25 @@ forever(function () {
 })
 
 /** This is another EventListener because input.lightLevel() continuously monitors whether I cover the light sensor. 
-why can't isCovered && !sensorCovered be merged into one function?
+You need both isCovered and sensorCovered to detect the transition from uncovered to covered, so noLightRequest is set once instead of repeatedly while your hand stays there.
 
 */
 
 forever(function () {
     let isCovered = input.lightLevel() < darkThreshold
     if (isCovered && !sensorCovered) {
-        applauseRequested = true
+        noLightRequest = true
     }
     sensorCovered = isCovered
     pause(50)
 })
 
-/** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForWhistle 
-why do i need two if.. here?
+/** When I blow my whistle, input.soundLevel() exceeds the soundThreshold I calibrated, and triggers lightsForWhistle. The second if loop checks once more after the three 100 ms waits, so a whistle detected at the end of the wait still triggers lightsForWhistle.
 
 */
 
 function waitForWhistle(): boolean {
-    for (let elapsed = 0; elapsed < 150; elapsed += 50) {
+    for (let elapsed = 0; elapsed < 300; elapsed += 100) {
         if (input.soundLevel() >= soundThreshold) {
             lightsForWhistle()
             return false
@@ -72,7 +71,7 @@ function lightsForWhistle() {
 }
 
 function coverLights() {
-    applauseRequested = false
+    noLightRequest = false
     turnAllOff()
     for (let flash = 0; flash < 3; flash++) {
         turnAllOn()
@@ -90,7 +89,7 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
             lightsForWhistle()
             return false
         }
-        if (applauseRequested) {
+        if (noLightRequest) {
             coverLights()
             return false
         }
@@ -105,7 +104,7 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
         lightsForWhistle()
         return false
     }
-    if (applauseRequested) {
+    if (noLightRequest) {
         coverLights()
         return false
     }
@@ -120,6 +119,7 @@ function waitForPattern(milliseconds: number, pattern: number): boolean {
 
 /** Another EventListener, because if I slide the switch right, the LEDs will blink at a 4x slower rate.
 This doesn't have to be a forever loop though, because I manually toggle the slide switch.
+dayDelay is the normal delay between LED updates. pattern is the pattern ID passed to waitForPattern. Returns false if waitForPattern is triggered by a whistle, an applause request, or a change to a different active pattern.
 .  */
 
 function speedRequest(dayDelay: number, pattern: number): boolean {
