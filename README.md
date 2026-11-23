@@ -10,7 +10,7 @@ my Xmas lights, strings of different colored LEDs
 
 hooked into an ![Adafruit Circuit Playground Express](https://github.com/adafruit/Adafruit_CircuitPlayground)
 
-because you can toggle from [block coding](https://makecode.com/_gbsPW9Hz9LvE) into Javascript.
+because you can toggle from ![block coding](https://makecode.com/_gbsPW9Hz9LvE) into Javascript.
    
    So I'm using a lobotomized Mozilla, the only builtin functions stem from the Adafruit board.  But that's what I wanted!  This is the first time since September I really could follow a function through a JavaScript.  And that only happened because I was coding in a lobotomized single board kind of way.  Doing so has been the best buttress I have found so far to use AI to code, without it overwhelming me. 
 
